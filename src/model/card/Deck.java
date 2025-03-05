@@ -30,7 +30,7 @@ public class Deck {
             Card card;
             
             while(frequency-->0) {
-	            if (cols.length == 6) {
+	            if (code>=0 && code<14) {
 	            	
 	                int rank = Integer.parseInt(cols[4]);
 	                Suit suit = Suit.valueOf(cols[5]);
@@ -67,8 +67,12 @@ public class Deck {
 	public static ArrayList<Card> drawCards() {
 		
         Collections.shuffle(cardsPool);
-        ArrayList<Card> drawnCards = new ArrayList<>(cardsPool.subList(0, Math.min(4, cardsPool.size())));
-        cardsPool.removeAll(drawnCards);
+        ArrayList<Card> drawnCards = new ArrayList<>();
+
+        for(int i=0; i<4 && !cardsPool.isEmpty(); i++) {
+        	Card card = cardsPool.remove(0);
+        	drawnCards.add(card);
+        }
         return drawnCards;
     }
 		

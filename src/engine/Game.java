@@ -24,7 +24,7 @@ public class Game implements GameManager {
         // Shuffle colors for random player assignments
         ArrayList<Colour> colourOrder = new ArrayList<>();
         Collections.addAll(colourOrder, Colour.RED, Colour.GREEN, Colour.BLUE, Colour.YELLOW);
-        Collections.shuffle(colourOrder, new Random());
+        Collections.shuffle(colourOrder);
 
         // Initialize game board
         this.board = new Board(colourOrder , this);
@@ -43,7 +43,7 @@ public class Game implements GameManager {
 
         // Distribute initial cards
         for (Player player : players) {
-            player.getHand().addAll(Deck.drawCards());
+            player.setHand(Deck.drawCards());
         }
 
         // Initialize turn tracking
@@ -51,4 +51,18 @@ public class Game implements GameManager {
         this.turn = 0;
         this.firePit = new ArrayList<>();
     }
+
+	public Board getBoard() {
+		return board;
+	}
+
+	public ArrayList<Player> getPlayers() {
+		return players;
+	}
+
+	public ArrayList<Card> getFirePit() {
+		return firePit;
+	}
+    
+    
 }

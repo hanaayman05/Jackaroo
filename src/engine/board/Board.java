@@ -8,25 +8,26 @@ import engine.GameManager;
 public class Board { // implementing gameManager interface
 	
 	private final GameManager gameManager;
-	private final Cell[] track;
-	private final SafeZone[] safeZones;
+	private final ArrayList<Cell> track;
+	private final ArrayList<SafeZone> safeZones;
 	private int splitDistance;
 	
 	public Board(ArrayList<Colour> colourOrder, GameManager gameManager)
 	{
 		this.gameManager=gameManager;
-		track=new Cell[100];
-		safeZones=new SafeZone[4];
+		track=new ArrayList<>();
+		safeZones=new ArrayList<>();
 		splitDistance=3;
+		
 		for(int i=0;i<100;i++) //set type of each cell
 		{
 			if(i==0 || i==25 || i==50 || i==75)
-				track[i]=new Cell(CellType.BASE);
+				track.add(new Cell(CellType.BASE));
 			else
 				if(i==23 || i==48 || i==73 || i==98)
-					track[i]=new Cell(CellType.ENTRY);
+					track.add(new Cell(CellType.ENTRY));
 				else
-					track[i]=new Cell(CellType.NORMAL);
+					track.add(new Cell(CellType.NORMAL));
 		}
 		
 		for(int i=0;i<8;i++) //creating 8 traps
@@ -36,18 +37,18 @@ public class Board { // implementing gameManager interface
 		
 		for(int i=0;i<4;i++) //Create 4 SafeZones and add them to the safeZones with the given colour order.
 		{
-			safeZones[i]=new SafeZone(colourOrder.get(i));  //msh mt2kda
+			safeZones.add(new SafeZone(colourOrder.get(i)));  //msh mt2kda
 		}
 	
 		
 	}
-	void assignTrapCell() //don't know if leave default access modifier or set it to public
+	public void assignTrapCell() 
 	{
 		Random random = new Random();
 		int i=random.nextInt(100);
-		if(track[i].getCellType()==CellType.NORMAL && !track[i].isTrap()) //msh mot2kda mn el compare
+		if(track.get(i).getCellType()==CellType.NORMAL && !track.get(i).isTrap()) 
 		{
-			track[i].setTrap(true);
+			track.get(i).setTrap(true);
 			return;
 		}
 		else
@@ -61,10 +62,10 @@ public class Board { // implementing gameManager interface
 	public void setSplitDistance(int splitDistance) {
 		this.splitDistance = splitDistance;
 	}
-	public Cell[] getTrack() {
+	public ArrayList<Cell> getTrack() {
 		return track;
 	}
-	public SafeZone[] getSafeZones() {
+	public ArrayList<SafeZone> getSafeZones() {
 		return safeZones;
 	}
 

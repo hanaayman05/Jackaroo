@@ -1,6 +1,6 @@
 package engine.board;
 
-import java.util.Random;
+import java.util.*;
 
 import model.Colour;
 import engine.GameManager;
@@ -12,7 +12,7 @@ public class Board { // implementing gameManager interface
 	private final SafeZone[] safeZones;
 	private int splitDistance;
 	
-	public Board(Colour[] colourOrder, GameManager gameManager)
+	public Board(ArrayList<Colour> colourOrder, GameManager gameManager)
 	{
 		this.gameManager=gameManager;
 		track=new Cell[100];
@@ -36,7 +36,7 @@ public class Board { // implementing gameManager interface
 		
 		for(int i=0;i<4;i++) //Create 4 SafeZones and add them to the safeZones with the given colour order.
 		{
-			safeZones[i]=new SafeZone(colourOrder[i]);  //msh mt2kda
+			safeZones[i]=new SafeZone(colourOrder.get(i));  //msh mt2kda
 		}
 	
 		

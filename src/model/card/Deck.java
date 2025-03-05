@@ -12,7 +12,7 @@ public class Deck {
 	final static private String CARDS_FILE = "Cards.csv";
 	static private ArrayList<Card> cardsPool;
 	
-	public static void localCardPool(BoardManager boardManager, GameManager gameManager) throws IOException {
+	public static void loadCardPool(BoardManager boardManager, GameManager gameManager) throws IOException {
 		cardsPool = new ArrayList<>();
 		
 		BufferedReader reader = new BufferedReader(new FileReader(CARDS_FILE));

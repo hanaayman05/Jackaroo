@@ -26,13 +26,13 @@ public class Game implements GameManager {
         Collections.addAll(colourOrder, Colour.RED, Colour.GREEN, Colour.BLUE, Colour.YELLOW);
         Collections.shuffle(colourOrder);
 
-        // Initialize game board
+        // Initialise game board
         this.board = new Board(colourOrder , this);
 
         // Load card pool
         Deck.loadCardPool((BoardManager) this.board, this);
 
-        // Initialize players
+        // Initialise players
         this.players = new ArrayList<>();
         players.add(new Player(playerName, colourOrder.get(0))); // Human player
 
@@ -46,7 +46,7 @@ public class Game implements GameManager {
             player.setHand(Deck.drawCards());
         }
 
-        // Initialize turn tracking
+        // Initialise turn tracking
         this.currentPlayerIndex = 0;
         this.turn = 0;
         this.firePit = new ArrayList<>();

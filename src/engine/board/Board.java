@@ -5,7 +5,7 @@ import java.util.*;
 import model.Colour;
 import engine.GameManager;
 
-public class Board { // implementing gameManager interface
+public class Board implements BoardManager { // implementing gameManager interface
 	
 	private final GameManager gameManager;
 	private final ArrayList<Cell> track;
@@ -42,10 +42,12 @@ public class Board { // implementing gameManager interface
 	
 		
 	}
-	public void assignTrapCell() 
+	
+	private void assignTrapCell() 
 	{
 		Random random = new Random();
 		int i=random.nextInt(100);
+		
 		if(track.get(i).getCellType()==CellType.NORMAL && !track.get(i).isTrap()) 
 		{
 			track.get(i).setTrap(true);

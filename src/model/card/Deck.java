@@ -20,8 +20,9 @@ public class Deck {
 		String line;
 		
 		while ((line = reader.readLine()) != null) {
+			System.out.println(line);
 			
-            String[] cols = line.split(",");
+            String[] cols = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
             int code = Integer.parseInt(cols[0]);
             int frequency = Integer.parseInt(cols[1]);
             String name = cols[2];

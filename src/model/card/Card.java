@@ -1,7 +1,11 @@
 package model.card;
 
 import engine.GameManager;
+import java.util.ArrayList;
+import model.player.Marble;
 import engine.board.BoardManager;
+import exception.*;
+import model.Colour;
 
 abstract public class Card {
 	
@@ -26,5 +30,27 @@ abstract public class Card {
 		return description;
 	}
 	
+	  public boolean validateMarbleSize(ArrayList<Marble> marbles) {
+	        
+	        return marbles != null && marbles.size() == 1;
+	    }
+	    
+	    public boolean validateMarbleColours(ArrayList<Marble> marbles) {
+	        
+	        if (!validateMarbleSize(marbles)) {
+	            return false;
+	        }
+	        
+	        
+	        Colour activePlayerColour = gameManager.getActivePlayerColour();
+	        for (Marble marble : marbles) {
+	            if (marble == null || marble.getColour() != activePlayerColour) {
+	                return false;
+	            }
+	        }
+	        return true;
+	    }
+	    
+	    public abstract void act(ArrayList<Marble> marbles) throws ActionException, InvalidMarbleException;
 
 }

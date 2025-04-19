@@ -1,6 +1,7 @@
 package model.player;
 
 import model.card.Card;
+import exception.*;
 
 import model.player.Marble;
 import model.Colour;
@@ -12,7 +13,7 @@ public class Player {
     private final ArrayList<Marble> marbles;
     private final ArrayList<Marble> selectedMarbles;
     private ArrayList<Card> hand;
-    private final Card selectedCard;
+    private Card selectedCard;
 
     public Player(String name, Colour colour) {
         this.name = name;
@@ -50,6 +51,57 @@ public class Player {
     public Card getSelectedCard() {
         return selectedCard;
     }
+    
+    public void regainMarble(Marble marble) {
+        if (marble != null) {
+            marbles.add(marble);
+        }
+    }
+
+    public Marble getOneMarble() {
+        return marbles.isEmpty() ? null : marbles.get(0);
+    }
+
+    public void selectCard(Card card) throws InvalidCardException {
+        if (card == null || !hand.contains(card)) {
+            throw new InvalidCardException("Card not in hand");
+        }
+        this.selectedCard = card; 
+    }
+
+    public void selectMarble(Marble marble) throws InvalidMarbleException {
+        if (marble == null) {
+            throw new InvalidMarbleException("Marble cannot be null");
+        }
+        if (selectedMarbles.size() >= 2) {
+            throw new InvalidMarbleException("Max 2 marbles selectable");
+        }
+        selectedMarbles.add(marble);
+    }
+
+    public void deselectAll() {
+        selectedCard = null;
+        selectedMarbles.clear();
+    }
+
+    public void play() throws GameException {
+        if (selectedCard == null) {
+            throw new InvalidCardException("No card selected");
+        }
+
+        
+        if (!selectedCard.validateMarbleSize(selectedMarbles)) {
+            throw new InvalidMarbleException("Invalid marble count for card");
+        }
+        if (!selectedCard.validateMarbleColours(selectedMarbles)) {
+            throw new InvalidMarbleException("Invalid marble colours for card");
+        }
+
+        
+        selectedCard.act(new ArrayList<>(selectedMarbles));
+        deselectAll();
+    }
+
 
 	
     

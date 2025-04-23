@@ -2,6 +2,7 @@ package model.card.standard;
 
 import java.util.ArrayList;
 
+import model.Colour;
 import model.player.Marble;
 import engine.GameManager;
 import engine.board.BoardManager;
@@ -16,37 +17,30 @@ public class Jack extends Standard {
     }
     
     @Override
-   	public void act(ArrayList<Marble> marbles) throws ActionException,
-   			InvalidMarbleException {
-    	
-    	//Not supposed to validate anything just do the action of the card
-    	
-//       	if (marbles == null) {
-//       	    throw new InvalidMarbleException("Marbles list cannot be null");
-//       	}
-//       	if (!validateMarbleSize(marbles)) {
-//               throw new InvalidMarbleException("Jack card requires exactly two marbles");
-//           }
-//           if (!validateMarbleColours(marbles)) {
-//               throw new InvalidMarbleException("Jack card requires one of your marbles and one opponent's marble");
-//           }
+    public boolean validateMarbleSize(ArrayList<Marble> marbles) {
+        return marbles.size() == 1 || marbles.size() == 2; 
+    }
+    
+    @Override
+    public void act(ArrayList<Marble> marbles) throws ActionException, InvalidMarbleException {
+       
+        if (marbles.size() == 1) {
+            super.act(marbles); 
+        } else {
            
-//           try {
-//               boardManager.swap(marbles.get(0), marbles.get(1));
-//           } catch (IllegalSwapException e) {
-//               throw e;
-//           }
-    	
-    	
-    	//if marbles' size is 1 --> Act as standard
-    	
-    	if(marbles.size()==1) 
-    		super.act(marbles);
-    	
-    	else {
-    		boardManager.swap(marbles.get(0), marbles.get(1));
-    	}
-       }
+            boardManager.swap(marbles.get(0), marbles.get(1));
+        }
+    }
+    
+
+    @Override
+    public boolean validateMarbleColours(ArrayList<Marble> marbles) {
+        if (marbles.size() != 2) return false;
+        Colour activeColour = gameManager.getActivePlayerColour();
+        return marbles.get(0).getColour() == activeColour
+               && marbles.get(1).getColour() != activeColour;
+    }
+ 
     
 
 }

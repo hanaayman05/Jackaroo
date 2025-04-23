@@ -1,5 +1,5 @@
 package model.card.standard;
-
+import model.*;
 import java.util.ArrayList;
 
 import model.player.Marble;
@@ -12,7 +12,15 @@ public class Five extends Standard {
         super(name, description, 5, suit, boardManager, gameManager);
     }
     
-    public boolean validateMarbleColours(ArrayList<Marble> marbles) { 
-    	return true;  //moves any marble 5 steps --> any marble = any colour
+    @Override
+    public boolean validateMarbleSize(ArrayList<Marble> marbles) {
+        return marbles.size() == 1; 
+    }
+    
+
+    @Override
+    public boolean validateMarbleColours(ArrayList<Marble> marbles) {
+       
+        return true; 
     }
 }

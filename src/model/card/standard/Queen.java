@@ -12,8 +12,8 @@ public class Queen extends Standard {
         super(name, description, 12, suit, boardManager, gameManager);
     }
     
-	public boolean validateMarbleSize(ArrayList<Marble> marbles) {
-		
-        return marbles.size() == 0 || marbles.size() == 1;
+    @Override
+    public boolean validateMarbleSize(ArrayList<Marble> marbles) {
+        return marbles.size() == 0 || marbles.size() == 1; 
     }
 }

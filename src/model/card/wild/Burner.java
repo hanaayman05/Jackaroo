@@ -16,6 +16,11 @@ public class Burner extends Wild {
     }
     
     @Override
+    public boolean validateMarbleSize(ArrayList<Marble> marbles) {
+        return marbles.size() == 1;
+    }
+    
+    @Override
 	public void act(ArrayList<Marble> marbles) throws ActionException,
 			InvalidMarbleException {
     	if (marbles == null) {

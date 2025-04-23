@@ -15,8 +15,9 @@ public class Ten extends Standard {
         super(name, description, 10, suit, boardManager, gameManager);
     }
     
+    @Override
     public boolean validateMarbleSize(ArrayList<Marble> marbles) {
-        return marbles.size() == 0|| marbles.size() == 1;
+        return marbles.size() == 0 || marbles.size() == 1;
     }
     
    	public void act(ArrayList<Marble> marbles) throws ActionException, InvalidMarbleException {

@@ -12,9 +12,10 @@ public class Seven extends Standard {
         super(name, description, 7, suit, boardManager, gameManager);
     }
 
+ 
+    @Override
     public boolean validateMarbleSize(ArrayList<Marble> marbles) {
-        
-        return marbles.size() == 1 || marbles.size() == 2;
+        return marbles.size() == 1 || marbles.size() == 2; 
     }
     
     //Not supposed to override validateMarbleColours --> Failure

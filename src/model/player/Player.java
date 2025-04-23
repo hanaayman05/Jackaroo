@@ -74,11 +74,11 @@ public class Player {
     }
 
     public void selectMarble(Marble marble) throws InvalidMarbleException {
-        if (marble == null) {
-            throw new InvalidMarbleException("Marble cannot be null");
+        if (selectedMarbles.contains(marble)) {
+            return; 
         }
         if (selectedMarbles.size() >= 2) {
-            throw new InvalidMarbleException("Max 2 marbles selectable");
+            throw new InvalidMarbleException("Cannot select more than 2 marbles");
         }
         selectedMarbles.add(marble);
     }

@@ -16,29 +16,13 @@ public class King extends Standard {
         super(name, description, 13, suit, boardManager, gameManager);
     }
     
+    @Override
     public boolean validateMarbleSize(ArrayList<Marble> marbles) {
-        return marbles.size() == 0 || marbles.size() == 1;
+        return marbles.size() == 0 || marbles.size() == 1; 
     }
  
     @Override
    	public void act(ArrayList<Marble> marbles) throws ActionException, InvalidMarbleException {
-//       	 if (!validateMarbleSize(marbles)) {
-//                throw new InvalidMarbleException("Invalid number of marbles selected for this card");
-//            }
-//            if (!validateMarbleColours(marbles)) {
-//                throw new InvalidMarbleException("You can only move your own marbles with this card");
-//            }
-//            
-//            try {
-//                boardManager.moveBy(marbles.get(0), this.getRank(), true);
-//            } catch (IllegalMovementException e) {
-//                throw e;
-//            } catch (IllegalDestroyException e) {
-//                throw new IllegalMovementException("King movement failed: " + e.getMessage());
-//            }
-//       }
-   	
-   		//FUCK (shams)
    	
    		if(marbles.size()==0)
    			gameManager.fieldMarble();

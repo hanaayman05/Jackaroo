@@ -13,6 +13,11 @@ public class Saver extends Wild {
         super(name, description, boardManager, gameManager);
     }
     
+    @Override
+    public boolean validateMarbleSize(ArrayList<Marble> marbles) {
+        return marbles.size() == 1;
+    }
+    
 
     @Override
 	public void act(ArrayList<Marble> marbles) throws ActionException,

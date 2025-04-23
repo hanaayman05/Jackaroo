@@ -8,6 +8,7 @@ import java.util.Collections;
 import engine.board.Board;
 import engine.board.Cell;
 import engine.board.CellType;
+import engine.board.SafeZone;
 import model.Colour;
 import model.card.Card;
 import model.card.Deck;
@@ -85,7 +86,8 @@ public class Game implements GameManager {
     }
     
     public boolean canPlayTurn() {
-        return !getCurrentPlayer().getHand().isEmpty();
+    	//should check whether the number of cards is enough or not with respect to the current turn 0-->4 , 1-->3, 2-->2, 3-->1
+        return getCurrentPlayer().getHand().size() + turn == 4;
     }
     
     public void playPlayerTurn() throws GameException {
@@ -95,62 +97,59 @@ public class Game implements GameManager {
     public void endPlayerTurn() {
         Player currentPlayer = players.get(currentPlayerIndex);
 
-        
-        if (currentPlayer.getSelectedCard() != null) {
-            firePit.add(currentPlayer.getSelectedCard());
-            currentPlayer.getHand().remove(currentPlayer.getSelectedCard());
-        }
+        firePit.add(currentPlayer.getSelectedCard());
+        currentPlayer.getHand().remove(currentPlayer.getSelectedCard());
 
         currentPlayer.deselectAll();
 
-       
         currentPlayerIndex = (currentPlayerIndex + 1) % players.size();
 
-        
         if (currentPlayerIndex == 0) {
             turn++;
             
-            
-            if (turn >= 4) {
-                turn = 0;
-                
-                
-                for (Player player : players) {
-                    while (player.getHand().size() < 4 && Deck.getPoolSize() > 0) {
-                        ArrayList<Card> drawnCards = Deck.drawCards();
-                        if (!drawnCards.isEmpty()) {
-                            player.getHand().add(drawnCards.get(0));
-                        }
-                    }
-                }
-                
-                
-                if (Deck.getPoolSize() < 4) {
-                    Deck.refillPool(new ArrayList<>(firePit));
-                    firePit.clear();
-                }
-            }
+            if(turn == 4) {
+            	turn = 0;
+            	
+        		for(int i=0; i<4; i++) {
+        			Player player = players.get(i);
+        			//refilling cardsPool if less than 4
+        			if(Deck.getPoolSize()<4) {
+        				Deck.refillPool(firePit);
+        				firePit.clear();
+        			}
+        			
+        			//refilling player's hands
+        			player.setHand(Deck.drawCards());
+        		}
+        	}
         }
     }
     
     public Colour checkWin() {
-        for (Player player : players) {
+    	ArrayList<SafeZone> safeZones = board.getSafeZones();
+    	
+        for (SafeZone safeZone : safeZones) {
             
-            ArrayList<Marble> allMarbles = new ArrayList<>(player.getMarbles());
-            int marblesInSafeZone = 0;
-            
-            
-            for (Marble marble : allMarbles) {
-                if (!board.getActionableMarbles().contains(marble)) {
-                    marblesInSafeZone++;
-                }
-            }
+        	//The arrayList marbles represent the player's home zone, marbles get removed when they are sent to the track
+        	
+//            ArrayList<Marble> allMarbles = new ArrayList<>(player.getMarbles());
+//            int marblesInSafeZone = 0;
             
             
-            if (marblesInSafeZone >= 4) {
-                return player.getColour();
-            }
+//            for (Marble marble : allMarbles) {
+//                if (!board.getActionableMarbles().contains(marble)) {
+//                    marblesInSafeZone++;
+//                }
+//            }
+            
+            if(safeZone.isFull()) return safeZone.getColour();
+            
+            
+//            if (marblesInSafeZone >= 4) {
+//                return player.getColour();
+//            }
         }
+        
         return null;
     }
     
@@ -177,7 +176,7 @@ public class Game implements GameManager {
 
     
     public void discardCard(Colour colour) throws CannotDiscardException {
-        Player target = null;
+        Player target = players.get(0);
         for (Player p : players) {
             if (p.getColour() == colour) {
                 target = p;
@@ -185,27 +184,41 @@ public class Game implements GameManager {
             }
         }
         
-        if (target == null || target.getHand().isEmpty()) {
+        if (target.getHand().isEmpty()) {
             throw new CannotDiscardException("No cards to discard");
         }
         
-        Card discarded = target.getHand().remove(0); 
+        //should discard a random card --> choose a random index
+//        Card discarded = target.getHand().remove(0); 
+        Card discarded = target.getHand().remove((int) (Math.random()*(target.getHand().size())));
         firePit.add(discarded);
     }
 
     
     public void discardCard() throws CannotDiscardException {
-        ArrayList<Player> opponents = new ArrayList<>(players);
-        opponents.remove(getCurrentPlayer());
-        opponents.removeIf(p -> p.getHand().isEmpty());
+    	//Not supposed to do all of this or throw any exception, just get a random player index that is not the current player
+    	
+//        ArrayList<Player> opponents = new ArrayList<>(players);
+//        opponents.remove(getCurrentPlayer());
+//        opponents.removeIf(p -> p.getHand().isEmpty());
+//        
+//        if (opponents.isEmpty()) {
+//            throw new CannotDiscardException("No players with cards to discard");
+//        }
         
-        if (opponents.isEmpty()) {
-            throw new CannotDiscardException("No players with cards to discard");
-        }
-        
-        Player target = opponents.get(0); 
-        Card discarded = target.getHand().remove(0);
-        firePit.add(discarded);
+    	//Not supposed to do all of this or throw any exception, just get a random player index that is not the current player
+    	
+//        Player target = opponents.get(0); 
+//        Card discarded = target.getHand().remove(0);
+//        firePit.add(discarded);
+    	
+    	Colour currentPlayerColour = players.get(currentPlayerIndex).getColour();
+    	Colour randomPlayerColour = players.get(0).getColour();
+    	
+    	do randomPlayerColour = players.get((int)(Math.random()*4)).getColour();
+    	while(randomPlayerColour==currentPlayerColour);
+    	
+    	discardCard(randomPlayerColour);
     }
 
     

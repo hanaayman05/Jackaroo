@@ -13,30 +13,13 @@ public class Saver extends Wild {
         super(name, description, boardManager, gameManager);
     }
     
-    @Override
-    public boolean validateMarbleSize(ArrayList<Marble> marbles) {
-        return marbles.size() == 1;
-    }
+//    public boolean validateMarbleSize(ArrayList<Marble> marbles) {
+//        return marbles.size() == 1;
+//    }
     
 
-    @Override
-	public void act(ArrayList<Marble> marbles) throws ActionException,
-			InvalidMarbleException {
-    	if (marbles == null) {
-    	    throw new InvalidMarbleException("Marbles list cannot be null");
-    	}
-    	if (!validateMarbleSize(marbles)) {
-            throw new InvalidMarbleException("Saver card requires exactly one marble");
-        }
-        if (!validateMarbleColours(marbles)) {
-            throw new InvalidMarbleException("Saver card can only target your own marbles");
-        }
-        
-        try {
-            boardManager.sendToSafe(marbles.get(0));
-        } catch (InvalidMarbleException e) {
-            throw e;
-        }
+    public void act(ArrayList<Marble> marbles) throws ActionException, InvalidMarbleException {
+    	boardManager.sendToSafe(marbles.get(0));
     }
 
 }

@@ -30,24 +30,26 @@ public abstract class Card {
     }
     
     public boolean validateMarbleSize(ArrayList<Marble> marbles) {
-        
-        return marbles.size() == 0 || marbles.size() == 1;
+        return marbles.size() == 1;
     }
     
     public boolean validateMarbleColours(ArrayList<Marble> marbles) {
+        if (marbles.size() == 0)
+            return true;
         
-//        if (!validateMarbleSize(marbles)) {  //you're not supposed to validate the size inside. The size is already valid 
-//            return false; 
-//        }
-        
-        Colour activePlayerColour = gameManager.getActivePlayerColour();
-        for (Marble marble : marbles) {
-            if (marble == null || marble.getColour() != activePlayerColour) { //either 0, 1 or 2 and all should be the same as the active player
-                return false;
-            }
+        else if (marbles.size() == 1) {
+            Marble marble = marbles.get(0);
+            return marble.getColour() == gameManager.getActivePlayerColour();
         }
-        return true;
+        
+//        else if(this instanceof Five && marbles.size()==1) return true; 
+        
+        else {
+            Colour activePlayerColour = gameManager.getActivePlayerColour();
+            return marbles.get(0).getColour()==(activePlayerColour) && marbles.get(1).getColour()==(activePlayerColour);
+        }
     }
+    
     
     public abstract void act(ArrayList<Marble> marbles) throws ActionException, InvalidMarbleException;
 

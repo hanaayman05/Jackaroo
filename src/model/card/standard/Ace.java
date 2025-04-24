@@ -24,13 +24,10 @@ public class Ace extends Standard {
     
     @Override
     public void act(ArrayList<Marble> marbles) throws ActionException, InvalidMarbleException {
-       
-        if (marbles == null || marbles.isEmpty()) {
-            gameManager.fieldMarble(); 
-        } else {
-            
-            boardManager.moveBy(marbles.get(0), 1, false); 
-        }
-    }
+    	if(marbles.size()==1) 
+    		super.act(marbles); //Act as standard
+    	else 
+    		gameManager.fieldMarble(); //field a marble
+	}
 
 }

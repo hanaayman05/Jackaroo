@@ -11,16 +11,9 @@ public class Five extends Standard {
     public Five(String name, String description, Suit suit, BoardManager boardManager, GameManager gameManager) {
         super(name, description, 5, suit, boardManager, gameManager);
     }
-    
-    @Override
-    public boolean validateMarbleSize(ArrayList<Marble> marbles) {
-        return marbles.size() == 1; 
-    }
-    
 
     @Override
-    public boolean validateMarbleColours(ArrayList<Marble> marbles) {
-       
+    public boolean validateMarbleColours(ArrayList<Marble> marbles) {  
         return true; 
     }
 }

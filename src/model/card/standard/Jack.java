@@ -35,10 +35,12 @@ public class Jack extends Standard {
 
     @Override
     public boolean validateMarbleColours(ArrayList<Marble> marbles) {
-        if (marbles.size() != 2) return false;
         Colour activeColour = gameManager.getActivePlayerColour();
-        return marbles.get(0).getColour() == activeColour
+        if(marbles.size()==2)
+        	return marbles.get(0).getColour() == activeColour
                && marbles.get(1).getColour() != activeColour;
+        else 
+        	return marbles.get(0).getColour() == activeColour;
     }
  
     

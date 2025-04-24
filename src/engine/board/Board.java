@@ -87,7 +87,7 @@ private int getPositionInPath(ArrayList<Cell> path, Marble marble)
 	for(int i=0;i<path.size();i++)
 	{
 		Cell tmp=path.get(i);
-		if(tmp.getMarble()!=null && tmp.getMarble().getColour()==marble.getColour())
+		if(tmp.getMarble()!=null && tmp.getMarble()==marble)
 			return i;
 	}
 	return -1;
@@ -95,29 +95,34 @@ private int getPositionInPath(ArrayList<Cell> path, Marble marble)
 
 private int getBasePosition(Colour colour)
 {
-	if(this.safeZones.get(0).getColour()==colour)
-		return 0;
-	if(this.safeZones.get(1).getColour()==colour)
-		return 25;
-	if(this.safeZones.get(2).getColour()==colour)
-		return 50;
-	if(this.safeZones.get(0).getColour()==colour)
-		return 75;
+//	if(this.safeZones.get(0).getColour()==colour)
+//		return 0;
+//	if(this.safeZones.get(1).getColour()==colour)
+//		return 25;
+//	if(this.safeZones.get(2).getColour()==colour)
+//		return 50;
+//	if(this.safeZones.get(0).getColour()==colour)
+//		return 75;
+//	return -1;
+	for(int i=0; i<4; i++) if(safeZones.get(i).getColour()==colour) return i*25;
+	
 	return -1;
 }
 
 private int getEntryPosition(Colour colour)
 {
-	if(this.safeZones.get(0).getColour()==colour)
-		return 98;   //it was 99 which is wrong
-	if(this.safeZones.get(1).getColour()==colour)
-		return 23;
-	if(this.safeZones.get(2).getColour()==colour)
-		return 48;
-	if(this.safeZones.get(3).getColour()==colour) // 3 was 1
-		return 73;
-	return -1;
-	
+//	if(this.safeZones.get(0).getColour()==colour)
+//		return 98;   //it was 99 which is wrong
+//	if(this.safeZones.get(1).getColour()==colour)
+//		return 23;
+//	if(this.safeZones.get(2).getColour()==colour)
+//		return 48;
+//	if(this.safeZones.get(3).getColour()==colour) // 3 was 1
+//		return 73;
+//	return -1;
+	int basePosition = getBasePosition(colour);
+	if(basePosition==-1) return -1;
+	return (basePosition - 2 + 100)%100;
 }
 
 private ArrayList<Cell> validateSteps(Marble marble, int steps) throws
@@ -201,72 +206,138 @@ IllegalMovementException
 	return path;
 }
 
-private void validatePath(Marble marble, ArrayList<Cell> fullPath, boolean destroy) throws IllegalMovementException
-{
-	for(int i=1;i<fullPath.size();i++)  // i was equal zero path starts from marble current position
-	{
+//private void validatePath(Marble marble, ArrayList<Cell> fullPath, boolean destroy) throws IllegalMovementException
+//{
+//	for(int i=1;i<fullPath.size();i++)  // i was equal zero path starts from marble current position
+//	{
+//		
+//		Cell tmp=fullPath.get(i);
+//		if(tmp.isTrap())
+//		{
+//			throw new IllegalMovementException("A player cannot bypass a Trap");
+//		}
+//		if(tmp.getMarble()!=null )
+//		{
+//			if(tmp.getMarble().getColour()==marble.getColour()) //self_bloackage
+//			{
+//				throw new IllegalMovementException("A player cannot bypass or destroy his own marble");
+//			}
+//			if(!destroy && i!=fullPath.size()-1)  // opponent marble and card is not king (path blockage)
+//			{
+//				throw new IllegalMovementException("Movement is invalid if there is more than "
+//						+ "one marble owned by any other player blocking the path.");
+//			}
+//			if(tmp.getCellType()==CellType.ENTRY)  //Safe Zone Entry
+//			{
+//				throw new IllegalMovementException("A marble cannot enter its Safe Zone "
+//						+ "if any marble is stationed at its player’s Safe Zone Entry");
+//			}
+//			
+//			if(tmp.getCellType()==CellType.BASE && this.getBasePosition(tmp.getMarble().getColour())==i ) //Base Cell Blockage
+//			{
+//				throw new IllegalMovementException(" A marble movement is blocked "
+//						+ "if another player marble is in its player Base cell");
+//			}
+//		}
+//	}
+//}
+
+private void validatePath(Marble marble, ArrayList<Cell> fullPath, boolean destroy) throws IllegalMovementException {
+	boolean AnotherMarble = false;
+	
+	for(int i=1; i<fullPath.size(); i++) { //starting from 1 to exclude the current position
+		Cell cell = fullPath.get(i);
 		
-		Cell tmp=fullPath.get(i);
-		if(tmp.isTrap())
-		{
-			throw new IllegalMovementException("A player cannot bypass a Trap");
+		//Path is clear
+		if(cell.getMarble()==null) continue;
+		
+		//Self-Blocking
+		if(cell.getMarble().getColour()== gameManager.getActivePlayerColour() && !destroy) 
+			throw new IllegalMovementException("One of your marbles is blocking your path");
+		
+		//Path Blockage
+		if((i+1)!=fullPath.size() && AnotherMarble && !destroy)
+			throw new IllegalMovementException("More than one opponent's marbles are blocking your path");
+		else
+			AnotherMarble = true;
+		
+		//SafeZone Entry
+		if(cell.getCellType()==CellType.ENTRY && (i+1)!=fullPath.size() && fullPath.get(i+1).getCellType()==CellType.SAFE && !destroy) {
+				throw new IllegalMovementException("A marble is at your safe zone entry");
 		}
-		if(tmp.getMarble()!=null )
-		{
-			if(tmp.getMarble().getColour()==marble.getColour()) //self_bloackage
-			{
-				throw new IllegalMovementException("A player cannot bypass or destroy his own marble");
-			}
-			if(!destroy && i!=fullPath.size()-1)  // opponent marble and card is not king (path blockage)
-			{
-				throw new IllegalMovementException("Movement is invalid if there is more than "
-						+ "one marble owned by any other player blocking the path.");
-			}
-			if(tmp.getCellType()==CellType.ENTRY)  //Safe Zone Entry
-			{
-				throw new IllegalMovementException("A marble cannot enter its Safe Zone "
-						+ "if any marble is stationed at its player’s Safe Zone Entry");
-			}
+		    		
+		//Base Cell Blockage
+		if(cell.getCellType()==CellType.BASE) {
+			int BasePosition = getPositionInPath(track, cell.getMarble());
 			
-			if(tmp.getCellType()==CellType.BASE && this.getBasePosition(tmp.getMarble().getColour())==i ) //Base Cell Blockage
-			{
-				throw new IllegalMovementException(" A marble movement is blocked "
-						+ "if another player marble is in its player Base cell");
-			}
+			if(getBasePosition(cell.getMarble().getColour())==BasePosition)
+				throw new IllegalMovementException("Another player's marble is in its base cell");
 		}
+		
+		//SafeZone Blockage 
+		if(cell.getCellType()==CellType.SAFE)
+			throw new IllegalMovementException("Cannot bypass or land on a marble in its safe zone");
 	}
 }
 
-private void move(Marble marble, ArrayList<Cell> fullPath, boolean destroy) throws IllegalDestroyException
-{
-	for(int i=1;i<fullPath.size();i++)
-	{
-		Cell tmp=fullPath.get(i);
-		if(tmp.isTrap())
-		{
-			this.gameManager.sendHome(marble);
-			tmp.setTrap(false);
-			this.assignTrapCell();
-			break;
-		}
-		if(tmp!=null)
-		{
-			if(tmp.getMarble().getColour()==this.gameManager.getActivePlayerColour())
-    		{
-    			throw new IllegalDestroyException("A player cannot destroy his own marbles");
-    		}
-			if( !destroy && i!=fullPath.size()-1 )
-    		{
-    			throw new IllegalDestroyException("A player cannot destroy another player's marble without a king");
-    		}
-			if(destroy || (!destroy && i==fullPath.size()-1))
-			{
-				this.gameManager.sendHome(tmp.getMarble());
-				tmp.setMarble(null);
+//private void move(Marble marble, ArrayList<Cell> fullPath, boolean destroy) throws IllegalDestroyException
+//{
+//	for(int i=1;i<fullPath.size();i++)
+//	{
+//		Cell tmp=fullPath.get(i);
+//		if(tmp.isTrap())
+//		{
+//			this.gameManager.sendHome(marble);
+//			tmp.setTrap(false);
+//			this.assignTrapCell();
+//			break;
+//		}
+//		if(tmp!=null)
+//		{
+//			if(tmp.getMarble().getColour()==this.gameManager.getActivePlayerColour())
+//    		{
+//    			throw new IllegalDestroyException("A player cannot destroy his own marbles");
+//    		}
+//			if( !destroy && i!=fullPath.size()-1 )
+//    		{
+//    			throw new IllegalDestroyException("A player cannot destroy another player's marble without a king");
+//    		}
+//			if(destroy || (!destroy && i==fullPath.size()-1))
+//			{
+//				this.gameManager.sendHome(tmp.getMarble());
+//				tmp.setMarble(null);
+//			}
+//		}
+//		tmp.setMarble(marble);
+//        fullPath.get(i-1).setMarble(null);
+//	}
+//}
+
+private void move(Marble marble, ArrayList<Cell> fullPath, boolean destroy) throws IllegalDestroyException {
+	//remove the marble
+	fullPath.get(0).setMarble(null);
+	
+	Cell target = fullPath.get(fullPath.size()-1);
+	
+	//Collision
+	if(target.getMarble()!=null) {
+		destroyMarble(target.getMarble());
+	}
+	target.setMarble(marble);
+	
+	//Special Card King --> send home??
+	if(destroy)
+		for(int i=1; i<fullPath.size()-1; i++) {
+    		if(fullPath.get(i).getMarble()!=null) {
+    			destroyMarble(fullPath.get(i).getMarble());
 			}
 		}
-		tmp.setMarble(marble);
-        fullPath.get(i-1).setMarble(null);
+	
+	//if the target cell is a trap cell
+	if(target.isTrap()) {
+		destroyMarble(marble); //destroy
+		target.setTrap(false); //deactivate
+		assignTrapCell(); //new trap
 	}
 }
 
@@ -289,22 +360,34 @@ private void validateSwap(Marble marble_1, Marble marble_2) throws IllegalSwapEx
 	}
 }
 
-private void validateDestroy(int positionInPath) throws IllegalDestroyException   //feha haga 5alt
-{
-	if(positionInPath>=0 && positionInPath<=99)
-	{
-		if(track.get(positionInPath).getCellType()==CellType.BASE)
-    	{
-    		throw new IllegalDestroyException();
-    	}
-	}
-	else
-	{
-		throw new IllegalDestroyException();
-	}
+//private void validateDestroy(int positionInPath) throws IllegalDestroyException   //feha haga 5alt
+//{
+//	if(positionInPath>=0 && positionInPath<=99)
+//	{
+//		if(track.get(positionInPath).getCellType()==CellType.BASE)
+//    	{
+//    		throw new IllegalDestroyException();
+//    	}
+//	}
+//	else
+//	{
+//		throw new IllegalDestroyException();
+//	}
+//
+//}
+
+private void validateDestroy(int positionInPath) throws IllegalDestroyException {
+	//let positionInPath be the position on the main track
+	
+	if(positionInPath==-1) 
+		throw new IllegalDestroyException("The marble is not on the main track");
+	
+	Cell cell = track.get(positionInPath);
+	
+	if(cell.getMarble()!=null && positionInPath == getBasePosition(cell.getMarble().getColour()))
+		throw new IllegalDestroyException("The marble is in its base cell");
 
 }
-
 private void validateFielding(Cell occupiedBaseCell) throws CannotFieldException
 {
 	if(occupiedBaseCell.getMarble()!=null)
@@ -354,9 +437,9 @@ public void destroyMarble(Marble marble) throws IllegalDestroyException
 public  void sendToBase(Marble marble) throws CannotFieldException, IllegalDestroyException
 {
 	Cell base=track.get(this.getBasePosition(marble.getColour()));
-	this.validateFielding(base);
-	if(base!=null)
+	if(base.getMarble()!=null)
 	{
+		this.validateFielding(base);
 		this.gameManager.sendHome((base.getMarble()));  //send home marble and did not call destroy method
 	}
 	base.setMarble(marble);

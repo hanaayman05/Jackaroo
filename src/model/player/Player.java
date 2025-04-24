@@ -89,23 +89,15 @@ public class Player {
     }
 
     public void play() throws GameException {
-        if (selectedCard == null) {
-            throw new InvalidCardException("No card selected");
-        }
-
-        
-        if (!selectedCard.validateMarbleSize(selectedMarbles)) {
-            throw new InvalidMarbleException("Invalid marble count for card");
-        }
-        if (!selectedCard.validateMarbleColours(selectedMarbles)) {
-            throw new InvalidMarbleException("Invalid marble colours for card");
-        }
-
-        
-        selectedCard.act(new ArrayList<>(selectedMarbles));
-        deselectAll();
+    	if(selectedCard == null) 
+    		throw new InvalidCardException("No card was selected");
+    	
+    	if(!selectedCard.validateMarbleSize(selectedMarbles))
+    		throw new InvalidMarbleException("Incorrect number of marbles");
+    
+    	if(!selectedCard.validateMarbleColours(selectedMarbles))
+    		throw new InvalidMarbleException("Incorrect colours of marbles");
+    	
+    	selectedCard.act(selectedMarbles);
     }
-
-
-
 }

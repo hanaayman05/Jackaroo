@@ -231,9 +231,6 @@ public class Game implements GameManager {
         int nextIndex = (currentPlayerIndex + 1) % players.size();
         return players.get(nextIndex).getColour();
     }
-    
-    
-    
 }
 
     

@@ -32,26 +32,6 @@ public class Standard extends Card {
     
     @Override
 	public void act(ArrayList<Marble> marbles) throws ActionException, InvalidMarbleException {
-//			InvalidMarbleException {
-//		   if (!validateMarbleSize(marbles)) {
-//		        throw new InvalidMarbleException("Invalid number of marbles selected");
-//		    }
-//		    if (!validateMarbleColours(marbles)) {
-//		        throw new InvalidMarbleException("You can only move your own marbles");
-//		    }
-//
-//		    
-//		    try {
-//		        boardManager.moveBy(marbles.get(0), rank, false);
-//		    } catch (IllegalMovementException e) {
-//		        throw new IllegalMovementException(e.getMessage());
-//		    } catch (IllegalDestroyException e) {
-//		        throw new IllegalDestroyException(e.getMessage());
-//		    }
-//		    }
-	
-	//Just implement the fucking standard action of the standard cards (Shams)
-	
-    	super.boardManager.moveBy(marbles.get(0), rank, false);
+    	boardManager.moveBy(marbles.get(0), rank, false);
     }
 }

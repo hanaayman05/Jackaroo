@@ -5,12 +5,9 @@ import java.util.ArrayList;
 import engine.GameManager;
 import engine.board.BoardManager;
 import exception.ActionException;
-import exception.IllegalDestroyException;
-import exception.IllegalMovementException;
 import exception.InvalidMarbleException;
 import model.card.Card;
 import model.player.Marble;
-
 
 public class Standard extends Card {
     private final int rank;
@@ -29,9 +26,10 @@ public class Standard extends Card {
     public Suit getSuit() {
         return suit;
     }
-    
+
     @Override
-	public void act(ArrayList<Marble> marbles) throws ActionException, InvalidMarbleException {
-    	boardManager.moveBy(marbles.get(0), rank, false);
+    public void act(ArrayList<Marble> marbles) throws ActionException, InvalidMarbleException{
+        this.boardManager.moveBy(marbles.get(0), rank, false);
     }
+
 }

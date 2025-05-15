@@ -1,10 +1,10 @@
 package model.card.standard;
-import model.*;
+
 import java.util.ArrayList;
 
-import model.player.Marble;
 import engine.GameManager;
 import engine.board.BoardManager;
+import model.player.Marble;
 
 public class Five extends Standard {
 
@@ -13,7 +13,8 @@ public class Five extends Standard {
     }
 
     @Override
-    public boolean validateMarbleColours(ArrayList<Marble> marbles) {  
-        return true; 
+    public boolean validateMarbleColours(ArrayList<Marble> marbles) {
+        return true;
     }
+
 }

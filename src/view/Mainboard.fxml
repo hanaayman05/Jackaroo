@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Polygon?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="822.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Polygon layoutX="490.0" layoutY="411.0" points="50.0, 0.0, 35.3599853515625, 35.3599853515625, 0.0, 50.0, -35.36, 35.36, -50.0, 0.0, -35.35531997680664, -35.35533905029297, 0.0, -50.0, 35.36, -35.36" rotate="22.5" scaleX="7.0" scaleY="7.0" scaleZ="7.0" stroke="BLACK" strokeType="INSIDE">
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.3552631437778473" green="0.24083058536052704" blue="0.05674342066049576" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Polygon>
+      
+      <fill>
+      <ImagePattern x="0" y="0" width="1.0" height="1.0" proportional="true">
+         <image>
+            <Image url="C:/Users/aseel/Desktop/jacks/Jackaroo/src/images/BoardBg.jpg" />
+         </image>
+      </ImagePattern>
+   </fill>
+   </children>
+</AnchorPane>

@@ -43,6 +43,8 @@ public class StartView {
 
         layout.setBackground(new Background(backgroundImage));
         
+        
+        
     
     	
     }

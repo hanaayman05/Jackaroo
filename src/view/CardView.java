@@ -11,11 +11,11 @@ public class CardView extends StackPane {
 
     private boolean faceUp = true;
 
-    public CardView(String rank, String suit,String path, boolean faceUp) {
+    public CardView(String path, boolean faceUp) {
         this.faceUp = faceUp;
 
      
-        frontImageView = new ImageView(loadFrontImage(rank, suit,path));
+        frontImageView = new ImageView(loadFrontImage(path));
         backImageView = new ImageView(loadBackImage());
 
       
@@ -30,29 +30,23 @@ public class CardView extends StackPane {
     }
 
     private void setupImageView(ImageView imageView) {
-        imageView.setFitWidth(80);       // Adjust width as needed
-        imageView.setFitHeight(120);     // Card height
+        imageView.setFitWidth(180);       
+        imageView.setFitHeight(220);     
         imageView.setPreserveRatio(true);
         imageView.setSmooth(true);
     }
 
-    private Image loadFrontImage(String rank, String suit,String path) {
-        String filename;
-        if (suit != null) {
-            filename = rank + "_of_" + suit;  // e.g., "A_of_spades"
-        } else {
-            filename = rank; // e.g., "Saver" or "Burner"
-        }
-
+    private Image loadFrontImage(String path) {
+       
         return new Image(getClass().getResourceAsStream(path));
     }
 
     private Image loadBackImage() {
-        String path = "file:/C:/Users/aseel/Desktop/Semster%20IV/(CSEN401)%20Computer%20Programming%20Lab/Game/Milestone%202%20Solution/JackarooM2Solution/images/CardImage.png";
+        String path = "/images/CardImage.png";
         return new Image(getClass().getResourceAsStream(path));
     }
 
-    private void updateVisibility() {
+    public void updateVisibility() {
         frontImageView.setVisible(faceUp);
         backImageView.setVisible(!faceUp);
     }

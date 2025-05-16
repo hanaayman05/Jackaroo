@@ -9,7 +9,7 @@ public class CardsView {
     private final HBox cardsContainer;
 
     public CardsView() {
-        cardsContainer = new HBox(-40); 
+        cardsContainer = new HBox(30); 
         cardsContainer.setPadding(new Insets(20));
     }
 

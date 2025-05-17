@@ -32,7 +32,7 @@ public class StartView {
         
 
         // Set the background image for the VBox
-        String Backgroundimg="file:/C:/Users/aseel/Desktop/Semster%20IV/(CSEN401)%20Computer%20Programming%20Lab/Game/Milestone%202%20Solution/JackarooM2Solution/images/Background.jpg";
+        String Backgroundimg=  "/images/startbg.jpeg";
         BackgroundImage backgroundImage = new BackgroundImage(
                 new javafx.scene.image.Image(Backgroundimg, 800, 600, false, true),  // Path to the image
                 BackgroundRepeat.NO_REPEAT,

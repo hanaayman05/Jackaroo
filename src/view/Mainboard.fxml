@@ -9,15 +9,23 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Circle?>
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="1600.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-    <StackPane layoutX="0" layoutY="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="1096.0" fitWidth="1938.0" layoutX="-14.0" layoutY="-15.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../Downloads/bgbg.png" />
+         </image>
+      </ImageView>
+      <StackPane prefHeight="1082.0" prefWidth="1918.0">
          <children>
-         <ImageView fitHeight="1200.0" fitWidth="1200.0" pickOnBounds="true">
-            <image>
-               <Image url="@../images/mainboard.png" />
-            </image>
-         </ImageView>
-      			<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0">
+            <ImageView fitHeight="946.0" fitWidth="944.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Downloads/boardfinal.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <GridPane layoutX="624.0" layoutY="190.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="672.0">
       			  <columnConstraints>
       			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -85,8 +93,7 @@
       			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       			  </rowConstraints>
       			   <children>
-      			
-                     			      <Circle fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="9" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+            <Circle fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="9" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
       				  <Circle fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
       				  <Circle fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
       				  <Circle fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
@@ -178,10 +185,24 @@
       				  <Circle fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="22" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
       				  <Circle fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="21" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
       				  <Circle fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="8" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
-      				  
-               			
-      			   </children>
-      			</GridPane>
-         </children>
-    </StackPane>
+            <Circle fill="DODGERBLUE" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="18" GridPane.halignment="CENTER" GridPane.rowIndex="29" GridPane.valignment="CENTER" />
+            <Circle fill="DODGERBLUE" layoutX="254.0" layoutY="673.0" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="12" GridPane.halignment="CENTER" GridPane.rowIndex="29" GridPane.valignment="CENTER" />
+            <Circle fill="#730606" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="18" GridPane.valignment="CENTER" />
+            <Circle fill="DODGERBLUE" layoutX="302.0" layoutY="673.0" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="16" GridPane.halignment="CENTER" GridPane.rowIndex="29" GridPane.valignment="CENTER" />
+            <Circle fill="DODGERBLUE" layoutX="350.0" layoutY="673.0" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="14" GridPane.halignment="CENTER" GridPane.rowIndex="29" GridPane.valignment="CENTER" />
+            <Circle fill="#257b24" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="18" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Circle fill="#730606" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="12" GridPane.valignment="CENTER" />
+            <Circle fill="#730606" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="14" GridPane.valignment="CENTER" />
+            <Circle fill="#730606" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="16" GridPane.valignment="CENTER" />
+            <Circle fill="#ffaf0f" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="29" GridPane.halignment="CENTER" GridPane.rowIndex="18" GridPane.valignment="CENTER" />
+            <Circle fill="#ffaf0f" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="29" GridPane.halignment="CENTER" GridPane.rowIndex="16" GridPane.valignment="CENTER" />
+            <Circle fill="#257b24" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="14" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Circle fill="#257b24" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="16" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Circle fill="#257b24" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="12" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Circle fill="#ffaf0f" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="29" GridPane.halignment="CENTER" GridPane.rowIndex="14" GridPane.valignment="CENTER" />
+            <Circle fill="#ffaf0f" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="29" GridPane.halignment="CENTER" GridPane.rowIndex="12" GridPane.valignment="CENTER" />
+            
+                           </children>
+      </GridPane>
+   </children>
 </AnchorPane>

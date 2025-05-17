@@ -4,7 +4,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class CardView extends StackPane {
+
+    private static final Map<String, Image> imageCache = new HashMap<>();
 
     private final ImageView frontImageView;
     private final ImageView backImageView;
@@ -14,44 +19,34 @@ public class CardView extends StackPane {
     public CardView(String path, boolean faceUp) {
         this.faceUp = faceUp;
 
-     
-        frontImageView = new ImageView(loadFrontImage(path));
-        backImageView = new ImageView(loadBackImage());
+        frontImageView = new ImageView(loadImage(path));          // Use cached image
+        backImageView = new ImageView(loadImage("/images/CardImage.png"));  // Back side
 
-      
         setupImageView(frontImageView);
         setupImageView(backImageView);
 
-      
         this.getChildren().addAll(backImageView, frontImageView);
 
-   
         updateVisibility();
     }
 
     private void setupImageView(ImageView imageView) {
-        imageView.setFitWidth(180);       
-        imageView.setFitHeight(220);     
+        imageView.setFitWidth(120);       // Suggest smaller to reduce memory
+        imageView.setFitHeight(160);
         imageView.setPreserveRatio(true);
         imageView.setSmooth(true);
     }
 
-    private Image loadFrontImage(String path) {
-       
-        return new Image(getClass().getResourceAsStream(path));
-    }
-
-    private Image loadBackImage() {
-        String path = "/images/CardImage.png";
-        return new Image(getClass().getResourceAsStream(path));
+    private Image loadImage(String path) {
+        return imageCache.computeIfAbsent(path, key ->
+            new Image(getClass().getResourceAsStream(key), 120, 160, true, true)
+        );
     }
 
     public void updateVisibility() {
         frontImageView.setVisible(faceUp);
         backImageView.setVisible(!faceUp);
     }
-
-    // Public methods for controlling the card's state
 
     public void setFaceUp(boolean faceUp) {
         this.faceUp = faceUp;

@@ -7,8 +7,10 @@ import view.StartView;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -16,13 +18,25 @@ import model.player.Marble;
 import model.Colour;
 import javafx.scene.shape.Circle;
 import javafx.scene.paint.Color;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.effect.Glow;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
+
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+
+import engine.Game;
 
 public class GUI extends Application {
     private Map<Marble, Circle> marbleMap = new HashMap<>();
     private boolean isHumanTurn = true;
+    
+    @FXML
+    private ImageView playerImageView;
 
     @Override
     public void start(Stage primaryStage) {
@@ -31,23 +45,35 @@ public class GUI extends Application {
         Scene startScene = new Scene(startView.getView(), 800, 600);
         primaryStage.setScene(startScene);
         primaryStage.setTitle("Jackaroo - Start");
+        primaryStage.setMaximized(true);
+        primaryStage.setResizable(false);
         primaryStage.show();
-
         
         Mainboard mainboardView = new Mainboard();
         StackPane layout = mainboardView.getMainboardView();
         Scene gameScene = new Scene(layout);
         
-        
         startView.getStartButton().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+            	
                 primaryStage.setScene(gameScene);
-                primaryStage.setMaximized(true);
-                initializeMarbles(layout); 
+                //primaryStage.setMaximized(true);
+                initializeMarbles(layout);
+                
+                Game game;
+				try {
+					game = new Game("aseel");
+				
+                CardDistributor cardDis=new CardDistributor(game,game.getBoard(),mainboardView);
+                
+					cardDis.initializeGame();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
-
         
         CardView card = new CardView("/images/10 clubs.jpg", false);
         CardView card2 = new CardView("/images/10 clubs.jpg", false);
@@ -66,9 +92,7 @@ public class GUI extends Application {
                 Colour marbleColour = convertColorToColour((Color) circle.getFill());
                 Marble marble = new Marble(marbleColour);
                 
-                
                 marbleMap.put(marble, circle);
-                
               
                 setupMarbleInteractions(circle);
             }
@@ -98,7 +122,6 @@ public class GUI extends Application {
                 circle.setEffect(null);
             }
         });
-
         
         circle.setOnMouseClicked(e -> {
             if (isHumanTurn) {
@@ -120,7 +143,6 @@ public class GUI extends Application {
             
             circle.setStroke(Color.GOLD);
             circle.setStrokeWidth(2.0);
-            
             
             Glow glow = new Glow(0.5);
             glow.setInput(new javafx.scene.effect.DropShadow(10, Color.WHITE));

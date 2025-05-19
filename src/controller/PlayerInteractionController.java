@@ -17,7 +17,7 @@ import java.util.Map;
 
 public class PlayerInteractionController {
 
-    private final GameManager gameManager;
+    /*private final GameManager gameManager;
     private final BoardManager boardManager;
     private final Mainboard mainboard;
     private final Map<Marble, Circle> marbleMap;
@@ -135,5 +135,5 @@ public class PlayerInteractionController {
         for (Circle c : marbleMap.values()) {
             c.setEffect(null);
         }
-    }
+    }*/
 }

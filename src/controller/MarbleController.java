@@ -7,11 +7,13 @@ import javafx.animation.Timeline;
 import javafx.application.Platform;
 //import javafx.scene.control.Alert;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
 import model.Colour;
 import model.player.Marble;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -50,34 +52,49 @@ public class MarbleController {
         }
     }
 
-    public void moveMarbleAlongTrack(Marble marble, List<String> path) {
-        if (path == null || path.isEmpty()) return;
+    public void moveMarbleAlongTrack(Marble marble, ArrayList<String> path, boolean destroy) {
+        if (path == null || path.size() < 2) 
+        	return; 
 
         Circle marbleCircle = marbleCircleMap.get(marble);
-        if (marbleCircle == null) {
-         //   showAlert("Error", "No UI Circle found for selected marble.");
-            return;
-        }
+        if (marbleCircle == null)
+        	return;
+
+        String startCellId = path.get(0);
+        Circle startCellCircle = trackCellMap.get(startCellId);
 
         try {
-            // Do the model move once
-            boardManager.moveBy(marble, path.size(), false);
+            
+            boardManager.moveBy(marble, path.size(), destroy);
         } catch (Exception ex) {
-        //    showAlert("Invalid Move", ex.getMessage());
-            return;
+           //showAlert
         }
-
+        if (startCellCircle != null) {
+            // Mark starting cell as empty (home or track)
+            startCellCircle.setFill(Color.BLACK); // or Color.BLACK depending on context
+        }
+        // ✅ Animate movement starting from path[1]
         Timeline timeline = new Timeline();
-        int totalSteps = path.size();
-
-        for (int i = 0; i < totalSteps; i++) {
+        
+        for (int i = 1; i < path.size(); i++) {
             final int step = i;
-            KeyFrame keyFrame = new KeyFrame(Duration.millis(300 * (step + 1)), e -> {
-                String cellId = path.get(step);
-                Circle cellCircle = trackCellMap.get(cellId);
-                if (cellCircle != null) {
-                    marbleCircle.setLayoutX(cellCircle.getLayoutX());
-                    marbleCircle.setLayoutY(cellCircle.getLayoutY());
+
+            KeyFrame keyFrame = new KeyFrame(Duration.millis(400 * step), e -> {
+                String currentCellId = path.get(step);
+                Circle currentCellCircle = trackCellMap.get(currentCellId);
+
+                // Clear previous cell
+                String previousCellId = path.get(step - 1);
+                Circle previousCellCircle = trackCellMap.get(previousCellId);
+                if (previousCellCircle != null) {
+                    previousCellCircle.setFill(Color.BLACK); // Track cell now empty
+                }
+
+                if (currentCellCircle != null) {
+                    marbleCircle.setLayoutX(currentCellCircle.getLayoutX());
+                    marbleCircle.setLayoutY(currentCellCircle.getLayoutY());
+
+                    currentCellCircle.setFill(marbleCircle.getFill()); // Fill new cell
                 }
             });
 
@@ -86,6 +103,8 @@ public class MarbleController {
 
         timeline.play();
     }
+
+
 
     private void moveToHomeUI(Marble marble) {
         Circle marbleCircle = marbleCircleMap.get(marble);

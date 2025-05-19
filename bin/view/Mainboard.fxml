@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1500.0" prefWidth="2500.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane prefHeight="1082.0" prefWidth="1918.0">
+         <children>
+            <ImageView fitHeight="1097.0" fitWidth="1166.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/boardfinal.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="1500.0" fitWidth="2500.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/bgbg.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <GridPane layoutX="870.0" layoutY="385.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="739.0">
+      			  <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="7.0" prefWidth="2.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="7.0" prefWidth="2.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="7.0" prefWidth="2.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="7.0" prefWidth="2.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="7.0" prefWidth="2.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      			  </columnConstraints>
+      			  <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="5.0" prefHeight="2.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="5.0" prefHeight="2.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="5.0" prefHeight="2.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="5.0" prefHeight="2.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="5.0" prefHeight="1.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      			   	  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      			      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      			      <RowConstraints maxHeight="9.799902343749977" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+      			  </rowConstraints>
+      			   <children>
+              <Circle fx:id="cell_29" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="26" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_31" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="24" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_39" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="11" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_43" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_46" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_66" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="26" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      			      <Circle fx:id="cell_37" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="14" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_33" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="22" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_40" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="10" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_44" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_68" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="28" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_81" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="29" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="10" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      			      <Circle fx:id="cell_36" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="16" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_28" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="27" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_41" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="9" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_35" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="18" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_48" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_69" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="29" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      			      <Circle fx:id="cell_34" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="20" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_32" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="23" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_42" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="8" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_38" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="12" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_47" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_27" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="28" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_26" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="29" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_25" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="30" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_14" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="12" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="27" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="red_1" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="30" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_15" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="11" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="28" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_16" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="29" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_17" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="30" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="red_0" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="31" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_11" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="17" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="26" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_13" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="13" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="26" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_12" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="15" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="26" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_18" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="31" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_24" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="31" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_20" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="33" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_21" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="34" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_22" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="33" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_23" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="32" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_19" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="32" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_10" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="19" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="26" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_9" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="21" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="26" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_8" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="23" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="26" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_7" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="24" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="27" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_6" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="25" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="28" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_5" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="26" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="29" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_4" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="27" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="30" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_3" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="28" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="31" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_2" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="29" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="32" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_1" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="30" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="33" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_0" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="31" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="34" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_88" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="27" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="22" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_89" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="28" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="23" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_90" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="29" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="24" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_99" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="32" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="33" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_91" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="30" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="25" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_98" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="33" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="32" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_97" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="34" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="31" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_96" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="35" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="30" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_95" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="34" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="29" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_94" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="33" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="28" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_93" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="32" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="27" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_92" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="31" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="26" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_87" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="27" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="20" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_86" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="27" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="18" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_85" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="27" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="16" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="yellow_3" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="29" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_84" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="27" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="14" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="yellow_2" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="30" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="yellow_1" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="31" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="yellow_0" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="32" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_64" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="24" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_82" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="28" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="11" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_80" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="30" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="9" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_79" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="31" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="8" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_83" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="27" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="12" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_45" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_65" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="25" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_67" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="27" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_70" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="30" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_75" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="35" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_49" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_74" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="34" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_73" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="33" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_72" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="32" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_71" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="31" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_76" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="34" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_77" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="33" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_78" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="32" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_30" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="25" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="blue_3" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="29" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="28" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="blue_2" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="30" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="29" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="blue_1" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="31" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="30" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="blue_0" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="32" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="31" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="red_3" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="28" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="red_2" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="29" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="green_3" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="green_2" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="green_1" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="green_0" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_62" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="21" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="8" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_61" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="19" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="8" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_60" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="17" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="8" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_58" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="13" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="8" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_50" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_63" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="23" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="8" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_59" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="15" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="8" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_57" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="12" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_56" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="11" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_55" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_54" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_53" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_52" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				  <Circle fx:id="cell_51" fill="BLACK" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+      				        				  
+      				  
+            <Circle fill="DODGERBLUE" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="21" GridPane.halignment="CENTER" GridPane.rowIndex="30" GridPane.valignment="CENTER" />
+            <Circle fill="DODGERBLUE" layoutX="254.0" layoutY="673.0" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="15" GridPane.halignment="CENTER" GridPane.rowIndex="30" GridPane.valignment="CENTER" />
+            <Circle fill="#730606" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="20" GridPane.valignment="CENTER" />
+            <Circle fill="DODGERBLUE" layoutX="302.0" layoutY="673.0" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="19" GridPane.halignment="CENTER" GridPane.rowIndex="30" GridPane.valignment="CENTER" />
+            <Circle fill="DODGERBLUE" layoutX="350.0" layoutY="673.0" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="17" GridPane.halignment="CENTER" GridPane.rowIndex="30" GridPane.valignment="CENTER" />
+            <Circle fill="#257b24" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="21" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Circle fill="#730606" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="14" GridPane.valignment="CENTER" />
+            <Circle fill="#730606" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="16" GridPane.valignment="CENTER" />
+            <Circle fill="#730606" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="18" GridPane.valignment="CENTER" />
+            <Circle fill="#ffaf0f" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="31" GridPane.halignment="CENTER" GridPane.rowIndex="20" GridPane.valignment="CENTER" />
+            <Circle fill="#ffaf0f" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="31" GridPane.halignment="CENTER" GridPane.rowIndex="18" GridPane.valignment="CENTER" />
+            <Circle fill="#257b24" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="15" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Circle fill="#257b24" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="19" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Circle fill="#257b24" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="17" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Circle fill="#ffaf0f" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="31" GridPane.halignment="CENTER" GridPane.rowIndex="16" GridPane.valignment="CENTER" />
+            <Circle fill="#ffaf0f" radius="100.0" scaleX="0.13" scaleY="0.13" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="31" GridPane.halignment="CENTER" GridPane.rowIndex="14" GridPane.valignment="CENTER" />
+            
+                                 </children>
+      </GridPane>
+      <ImageView fitHeight="175.0" fitWidth="175.0" layoutX="1650.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/cpu3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="175.0" fitWidth="175.0" layoutX="700.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/cpu2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="175.0" fitWidth="175.0" layoutX="700.0" layoutY="1100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/cpu1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playerImageView" fitHeight="175.0" fitWidth="175.0" layoutX="1650.0" layoutY="1100.0" pickOnBounds="true" preserveRatio="true" />
+      <HBox fx:id="cardBox4" layoutX="1485.0" layoutY="646.0" prefHeight="100.0" prefWidth="300.0" rotate="270.0" />
+      <HBox fx:id="cardBox3" layoutX="974.0" layoutY="162.0" prefHeight="100.0" prefWidth="300.0" rotate="180.0" />
+      <HBox fx:id="cardBox2" layoutX="470.0" layoutY="646.0" prefHeight="100.0" prefWidth="300.0" rotate="90.0" />
+      <HBox fx:id="cardBox1" layoutX="974.0" layoutY="1128.0" prefHeight="100.0" prefWidth="300.0" />
+      <Pane fx:id="drawPile" layoutX="1900.0" layoutY="650.0" prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>
